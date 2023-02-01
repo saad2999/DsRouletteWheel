@@ -147,6 +147,7 @@ public class SpinWheel {
                 runing = false;
         }
         int index = (int)(numberOfRewards * (go.transform.eulerAngles.z / 360));
+        Debug.Log(index);
 
         reward(index + 1);
     }

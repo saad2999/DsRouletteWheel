@@ -7,6 +7,8 @@ public class wheel : MonoBehaviour
     SpinWheel obj;
     int money = 0;
     public GameObject wheelTOspin;
+    //sound of wheel spinning
+    public AudioSource wheelSound;
     // Start is called before the first frame update
     void Start()
     {
@@ -60,12 +62,18 @@ public class wheel : MonoBehaviour
         });
         obj.setWheel(wheelTOspin);
         
-        StartCoroutine( obj.StartNewRun());
+        // StartCoroutine( obj.StartNewRun());
     }
 
     // Update is called once per frame
     void Update()
     {
         
+    }
+
+    public void spinWheel()
+    {
+        StartCoroutine(obj.StartNewRun());
+        wheelSound.Play();
     }
 }
